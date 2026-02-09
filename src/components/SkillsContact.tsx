@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Send } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { BackgroundGradient } from '@/components/ui/background-gradient';
+import { div } from 'framer-motion/client';
 
 const skills = {
   Languages: ["TypeScript", "JavaScript", "Java", "Python", "SQL"],
@@ -51,59 +53,48 @@ export default function SkillsContact() {
         </div>
 
         {/* Contact Section */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto" id="contact">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 md:p-12 rounded-2xl border border-slate-700 shadow-2xl"
+            className="text-center mb-10"
           >
-            <div className="flex flex-col md:flex-row gap-12">
-              <div className="flex-1">
-                <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
-                <p className="text-slate-400 mb-8">
-                  I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-                </p>
-                
-                <div className="space-y-4">
-                  <a href="https://github.com/Zaheer-zk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors">
-                    <Github className="w-6 h-6" />
-                    <span>Zaheer-zk</span>
-                  </a>
-                  <a href="https://linkedin.com/in/zaheerzk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors">
-                    <Linkedin className="w-6 h-6" />
-                    <span>zaheerzk</span>
-                  </a>
-                  <a href="mailto:hello@example.com" className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors">
-                    <Mail className="w-6 h-6" />
-                    <span>hello@example.com</span>
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex-1">
-                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-1">Name</label>
-                    <input type="text" id="name" className="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500 transition-colors" placeholder="Your Name" />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-400 mb-1">Email</label>
-                    <input type="email" id="email" className="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500 transition-colors" placeholder="your@email.com" />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-400 mb-1">Message</label>
-                    <textarea id="message" rows={4} className="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500 transition-colors" placeholder="Tell me about your project..."></textarea>
-                  </div>
-                  <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
-                    <Send className="w-4 h-4" />
-                    Send Message
-                  </button>
-                </form>
-              </div>
-            </div>
+             <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
+             <p className="text-slate-400">
+                Open for opportunities and collaborations.
+             </p>
           </motion.div>
+
+          <div className="flex justify-center">
+            <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-zinc-900 dark:bg-zinc-900">
+                <div className="flex flex-col items-center">
+                    <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+                    Zaheer Khan
+                    </p>
+            
+                    <div className="flex flex-col gap-4 mt-4 w-full">
+                        <a href="https://linkedin.com/in/zaheerzk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors bg-slate-800 p-3 rounded-lg w-full justify-center">
+                            <Linkedin className="w-5 h-5" />
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="mailto:khanzaheersami@gmail.com" className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors bg-slate-800 p-3 rounded-lg w-full justify-center">
+                            <Mail className="w-5 h-5" />
+                            <span>Email Me</span>
+                        </a>
+                        <div className="flex items-center gap-3 text-slate-300 bg-slate-800 p-3 rounded-lg w-full justify-center">
+                             <Phone className="w-5 h-5" />
+                            <span>+91 81144 18543</span>
+                        </div>
+                         <a href="https://github.com/Zaheer-zk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors bg-slate-800 p-3 rounded-lg w-full justify-center">
+                            <Github className="w-5 h-5" />
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </BackgroundGradient>
+          </div>
         </div>
 
       </div>

@@ -2,12 +2,16 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import SkillsContact from "@/components/SkillsContact";
+import Navbar from "@/components/Navbar";
+import TechStack from "@/components/TechStack";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white selection:bg-blue-500 selection:text-white">
+    <main className="min-h-screen bg-slate-950 text-white selection:bg-blue-500 selection:text-white relative">
+      <Navbar />
       <Hero />
       <About />
+      <TechStack />
       <Projects />
       <SkillsContact />
       

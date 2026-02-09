@@ -111,11 +111,14 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 0.2, type: "spring" }}
             >
                {/* Placeholder for user image */}
-               <div className="w-full h-full flex items-center justify-center text-slate-500 bg-gradient-to-br from-slate-800 to-slate-900">
-                    <div className="text-center p-4">
-                        <p className="text-sm   font-semibold"><Image src="/hero-image.png" alt="Zaheer Khan" fill className="object-cover" priority /></p>
-                        <p className="text-xs mt-2 opacity-60"></p>
-                    </div>
+               <div className="w-full h-full relative">
+                    <Image 
+                      src="/hero-image.png" 
+                      alt="Zaheer Khan" 
+                      fill 
+                      className="object-cover" 
+                      priority 
+                    />
                </div>
             </motion.div>
         </motion.div>

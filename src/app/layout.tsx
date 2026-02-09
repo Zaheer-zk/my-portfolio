@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import FluidCursor from "@/components/FluidCursor";
-import { Metadata } from "next";
 
 const outfit = Outfit({
   subsets: ["latin"],
