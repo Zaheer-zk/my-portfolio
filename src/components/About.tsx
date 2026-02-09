@@ -23,7 +23,7 @@ const achievements = [
 
 export default function About() {
   return (
-    <section className="py-20 bg-slate-950 text-white relative overflow-hidden">
+    <section id="about" className="py-20 bg-slate-950 text-white relative overflow-hidden">
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-900 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-purple-900 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>

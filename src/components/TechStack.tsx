@@ -3,23 +3,25 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { 
-  Code, 
-  Database, 
-  Globe, 
-  Layout, 
-  Server, 
   Smartphone, 
-  Terminal, 
   Cpu
 } from 'lucide-react';
+import { 
+  ReactIcon, 
+  NextIcon, 
+  TailwindIcon, 
+  NodeIcon, 
+  PostgresIcon, 
+  TypeScriptIcon 
+} from '@/components/Icons';
 
 const technologies = [
-  { name: 'React', icon: <Code className="w-full h-full" /> },
-  { name: 'Next.js', icon: <Globe className="w-full h-full" /> },
-  { name: 'Tailwind', icon: <Layout className="w-full h-full" /> },
-  { name: 'Node.js', icon: <Server className="w-full h-full" /> },
-  { name: 'PostgreSQL', icon: <Database className="w-full h-full" /> },
-  { name: 'TypeScript', icon: <Terminal className="w-full h-full" /> },
+  { name: 'React', icon: <ReactIcon className="w-full h-full" /> },
+  { name: 'Next.js', icon: <NextIcon className="w-full h-full" /> },
+  { name: 'Tailwind', icon: <TailwindIcon className="w-full h-full" /> },
+  { name: 'Node.js', icon: <NodeIcon className="w-full h-full" /> },
+  { name: 'PostgreSQL', icon: <PostgresIcon className="w-full h-full" /> },
+  { name: 'TypeScript', icon: <TypeScriptIcon className="w-full h-full" /> },
   { name: 'Mobile', icon: <Smartphone className="w-full h-full" /> },
   { name: 'System', icon: <Cpu className="w-full h-full" /> },
 ];

@@ -5,7 +5,7 @@ import { Home, User, Code, Briefcase, Mail } from 'lucide-react';
 import { useState } from 'react';
 
 const navItems = [
-  { name: 'Home', icon: <Home className="w-5 h-5" />, href: '#' },
+  { name: 'Home', icon: <Home className="w-5 h-5" />, href: '#home' },
   { name: 'About', icon: <User className="w-5 h-5" />, href: '#about' },
   { name: 'Projects', icon: <Code className="w-5 h-5" />, href: '#projects' },
   { name: 'Skills', icon: <Briefcase className="w-5 h-5" />, href: '#skills' },
@@ -24,8 +24,9 @@ export default function Navbar() {
         className="flex items-center gap-2 px-2 py-2 bg-slate-900/50 backdrop-blur-xl border border-slate-800 rounded-full shadow-2xl relative"
       >
         {navItems.map((item) => (
-          <button
+          <a
             key={item.name}
+            href={item.href}
             onClick={() => setActiveTab(item.name)}
             className={`relative px-4 py-2 rounded-full transition-colors duration-300 flex items-center gap-2 ${
               activeTab === item.name ? 'text-white' : 'text-slate-400 hover:text-white'
@@ -44,7 +45,7 @@ export default function Navbar() {
             }`}>
                 {item.name}
             </span>
-          </button>
+          </a>
         ))}
       </motion.div>
     </div>

@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import FluidCursor from "@/components/FluidCursor";
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-inter",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Zaheer Khan | Senior Software Engineer",
-  description: "Portfolio of Zaheer Khan, a Senior Full Stack Developer specializing in enterprise-grade solutions.",
+  title: "Zaheer Khan | Senior SDE",
+  description: "Senior Software Development Engineer Portfolio",
 };
 
 export default function RootLayout({
@@ -20,9 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${outfit.variable} font-sans antialiased`}
+        className={`${inter.variable} font-sans antialiased bg-slate-950 text-white`}
       >
         <FluidCursor />
         {children}

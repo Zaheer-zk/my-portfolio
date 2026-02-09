@@ -2,7 +2,10 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image'; // Kept for future use
-import { useRef, useEffect, useState } from 'react';
+import { useRef } from 'react';
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
+import { div } from 'framer-motion/client';
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,56 +18,17 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
 
-  const [particles, setParticles] = useState<Array<{
-    width: number;
-    height: number;
-    top: number;
-    left: number;
-    duration: number;
-    xMove: number;
-  }>>([]);
-
-  useEffect(() => {
-    const newParticles = [...Array(20)].map(() => ({
-      width: Math.random() * 5 + 2,
-      height: Math.random() * 5 + 2,
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      duration: Math.random() * 10 + 10,
-      xMove: Math.random() * 50 - 25,
-    }));
-    setParticles(newParticles);
-  }, []);
+  /* Removed custom particle state and effect in favor of new components */
 
   return (
     <section
+      id="home"
       ref={containerRef}
       className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-slate-950 text-white"
     >
-      {/* Background Particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        {particles.map((p, i) => (
-          <motion.div
-            key={i}
-            className="absolute bg-white rounded-full opacity-20"
-            style={{
-              width: `${p.width}px`,
-              height: `${p.height}px`,
-              top: `${p.top}%`,
-              left: `${p.left}%`,
-            }}
-            animate={{
-              y: [0, -100, 0],
-              x: [0, p.xMove, 0],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: p.duration,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          />
-        ))}
+      <div className="absolute inset-0 z-0">
+        <StarsBackground />
+        <ShootingStars />
       </div>
 
       <div className="container mx-auto px-4 z-10 flex flex-col md:flex-row items-center justify-center gap-10">

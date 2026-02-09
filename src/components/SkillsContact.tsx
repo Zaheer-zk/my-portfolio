@@ -17,7 +17,7 @@ export default function SkillsContact() {
       <div className="container mx-auto px-4">
         
         {/* Skills Section */}
-        <div className="mb-24">
+        <div className="mb-24" id="skills">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
