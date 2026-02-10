@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Open_Sans, Poppins, JetBrains_Mono } from "next/font/google"; // Import standard fonts
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 import FluidCursor from "@/components/FluidCursor";
 
@@ -35,10 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${openSans.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans antialiased bg-slate-950 text-white`}
+        className={`${openSans.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans antialiased bg-slate-950 text-white overflow-x-hidden`}
+
       >
         <FluidCursor />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
