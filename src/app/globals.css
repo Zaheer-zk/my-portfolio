@@ -39,6 +39,9 @@ body {
   .animate-meteor {
     animation: meteor 5s linear infinite;
   }
+  .animate-meteor-falling {
+    animation: meteor-falling 5s linear infinite;
+  }
 }
 
 @keyframes meteor {
@@ -51,6 +54,20 @@ body {
   }
   100% {
     transform: rotate(215deg) translateX(-500px);
+    opacity: 0;
+  }
+}
+
+@keyframes meteor-falling {
+  0% {
+    transform: rotate(90deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(90deg) translateX(-1000px); /* Move down */
     opacity: 0;
   }
 }
