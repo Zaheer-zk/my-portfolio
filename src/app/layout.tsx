@@ -1,10 +1,24 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google"; // Import Open Sans
+import { Open_Sans, Poppins, JetBrains_Mono } from "next/font/google"; // Import standard fonts
 import "./globals.css";
 import FluidCursor from "@/components/FluidCursor";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
+  variable: "--font-open-sans",
+  display: "swap",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -21,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${openSans.className} italic antialiased bg-slate-950 text-white`}
+        className={`${openSans.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans antialiased bg-slate-950 text-white`}
       >
         <FluidCursor />
         {children}
