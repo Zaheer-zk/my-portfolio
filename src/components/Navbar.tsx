@@ -7,9 +7,10 @@ import { useState } from 'react';
 const navItems = [
   { name: 'Home', icon: <Home className="w-5 h-5" />, href: '#home' },
   { name: 'About', icon: <User className="w-5 h-5" />, href: '#about' },
+  { name: 'Experience', icon: <Briefcase className="w-5 h-5" />, href: '#experience' },
   { name: 'Projects', icon: <Code className="w-5 h-5" />, href: '#projects' },
   { name: 'Skills', icon: <Briefcase className="w-5 h-5" />, href: '#skills' },
-  { name: 'Contact', icon: <Mail className="w-5 h-5" />, href: '#contact' },
+  { name: 'Contact', icon: <Mail className="w-5 h-5" />, href: '#contact' }, // Note: Skills section contains contact
 ];
 
 export default function Navbar() {
