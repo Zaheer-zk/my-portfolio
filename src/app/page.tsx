@@ -19,7 +19,9 @@ export default function Home() {
       
       <footer className="py-8 text-center text-slate-500 text-sm border-t border-slate-900">
         <p>&copy; {new Date().getFullYear()} Zaheer Khan. All rights reserved.</p>
-        <p className="mt-2">Built with Next.js, Tailwind CSS & Framer Motion</p>
+        <p className="mt-2 flex items-center justify-center gap-1 font-cursive text-2xl text-slate-300">
+          Made with <span className="text-red-500 animate-pulse">❤️</span> by Zaheer
+        </p>
       </footer>
     </main>
   );

@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google"; // Import Open Sans
 import "./globals.css";
 import FluidCursor from "@/components/FluidCursor";
 
-const inter = Inter({
+const openSans = Open_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
   display: "swap",
 });
 
@@ -22,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} font-sans antialiased bg-slate-950 text-white`}
+        className={`${openSans.className} italic antialiased bg-slate-950 text-white`}
       >
         <FluidCursor />
         {children}
