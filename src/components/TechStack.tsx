@@ -52,17 +52,28 @@ export default function TechStack() {
   const mouseX = useMotionValue(Infinity);
 
   return (
-    <div className="flex justify-center items-center py-20 pb-32">
-        <div className="relative">
+    <div className="flex justify-center items-center py-20 pb-32 px-4">
+        <div className="relative w-full max-w-3xl flex flex-col items-center">
+            {/* Desktop Dock */}
             <motion.div
                 onMouseMove={(e) => mouseX.set(e.pageX)}
                 onMouseLeave={() => mouseX.set(Infinity)}
-                className="mx-auto flex h-16 items-end gap-4 rounded-2xl bg-slate-900/50 px-4 pb-3 pt-3 border border-slate-800 backdrop-blur-md"
+                className="hidden md:flex mx-auto h-16 items-end gap-4 rounded-2xl bg-slate-900/50 px-4 pb-3 pt-3 border border-slate-800 backdrop-blur-md"
             >
                 {technologies.map((tech, index) => (
                 <AppIcon key={index} mouseX={mouseX} icon={tech.icon} />
                 ))}
             </motion.div>
+
+            {/* Mobile Grid */}
+            <div className="md:hidden flex flex-wrap justify-center gap-4 w-full p-4 rounded-2xl bg-slate-900/50 border border-slate-800 backdrop-blur-md">
+                 {technologies.map((tech, index) => (
+                    <div key={index} className="w-12 h-12 flex-shrink-0 rounded-full bg-slate-800 flex items-center justify-center p-2.5 text-slate-300 border border-slate-700 shadow-sm">
+                        {tech.icon}
+                    </div>
+                 ))}
+            </div>
+
              <p className="text-center text-slate-500 mt-4 text-sm">Tech Stack</p>
         </div>
     </div>
